@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 8169446266357648515}
   - component: {fileID: 6771682903337460376}
   - component: {fileID: 1004419077971016573}
+  - component: {fileID: -1112195390644474355}
   m_Layer: 0
   m_Name: Cubo1
   m_TagString: Untagged
@@ -218,6 +219,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1112195390644474355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655464071766550182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be79de649b450ab449a89a5b28335308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validColor: {r: 0.4, g: 1, b: 0.6, a: 1}
+  invalidColor: {r: 1, g: 0.4, b: 0.4, a: 1}
+  tintWhileDragging: 1
 --- !u!1 &8570405562059434499
 GameObject:
   m_ObjectHideFlags: 0

@@ -2620,6 +2620,7 @@ MonoBehaviour:
     layer: 1
   uiManager: {fileID: 2063101747}
   currentTool: 0
+  selectedPrefabIndex: -1
 --- !u!4 &857780817
 Transform:
   m_ObjectHideFlags: 0
@@ -3007,6 +3008,7 @@ MonoBehaviour:
   inertia: 0.85
   damping: 8
   maxSpeed: 50
+  cancelInertiaOnZoomChange: 1
   minX: -50
   maxX: 50
   minZ: -50
@@ -3027,7 +3029,7 @@ MonoBehaviour:
   zoomSlider: {fileID: 2128207924}
   minZoom: 2
   maxZoom: 20
-  zoomStep: 1
+  zoomStep: 2
 --- !u!1 &1006649760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,7 +4888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1747827704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5000,10 +5002,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 345195739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90.2697, y: -52.3305}
+  m_SizeDelta: {x: 180.5394, y: 34.887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1814003564
 GameObject:
@@ -5355,6 +5357,7 @@ MonoBehaviour:
   buildButton: {fileID: 291197896}
   selectButton: {fileID: 1680900611}
   rotateButton: {fileID: 543183543}
+  moveButton: {fileID: 1614889344}
   prefabButtonParent: {fileID: 1355878079}
   prefabButtonPrefab: {fileID: 8395310386580629855, guid: c28364712bdab674b9a0130488b5258d, type: 3}
   prefabScrollRect: {fileID: 1358350467}

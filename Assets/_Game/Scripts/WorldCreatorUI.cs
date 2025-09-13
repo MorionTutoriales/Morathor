@@ -14,6 +14,7 @@ public class WorldCreatorUI : MonoBehaviour
     public Button buildButton;
     public Button selectButton;
     public Button rotateButton;
+    public Button moveButton;
 
     [Header("Prefab Selection")]
     public Transform prefabButtonParent;
@@ -45,11 +46,16 @@ public class WorldCreatorUI : MonoBehaviour
         manager = worldManager;
         SetupUI();
         CreatePrefabButtons();
-        UpdateToolDisplay(ToolMode.Build);
 
         // Subscribe to events
         WorldCreatorManager.OnToolChanged += UpdateToolDisplay;
         WorldCreatorManager.OnPrefabSelected += UpdateSelectedPrefab;
+
+        WorldCreatorManager.OnToolChanged += OnToolChanged;
+
+        UpdateToolDisplay(ToolMode.Move);
+        OnToolChanged(ToolMode.Move);
+
     }
 
     void OnDestroy()
@@ -72,6 +78,9 @@ public class WorldCreatorUI : MonoBehaviour
 
         if (rotateButton != null)
             rotateButton.onClick.AddListener(() => manager.SetTool(ToolMode.Rotate));
+
+        if (moveButton != null)
+            moveButton.onClick.AddListener(() => manager.SetTool(ToolMode.Move));
 
         // Setup layer toggles
         for (int i = 0; i < layerToggles.Length; i++)
@@ -222,6 +231,8 @@ public class WorldCreatorUI : MonoBehaviour
             selectButton.GetComponent<Image>().color = originalButtonColor;
         if (rotateButton != null)
             rotateButton.GetComponent<Image>().color = originalButtonColor;
+        if (moveButton != null)
+            moveButton.GetComponent<Image>().color = originalButtonColor;
 
         // Highlight active tool
         Button activeButton = null;
@@ -241,6 +252,10 @@ public class WorldCreatorUI : MonoBehaviour
                 activeButton = rotateButton;
                 toolName = "Rotación";
                 break;
+            case ToolMode.Move:
+                activeButton = moveButton;
+                toolName = "Mover";
+                break;
         }
 
         if (activeButton != null)
@@ -248,6 +263,27 @@ public class WorldCreatorUI : MonoBehaviour
 
         if (toolModeText != null)
             toolModeText.text = "Herramienta: " + toolName;
+    }
+
+    public void OnToolChanged(ToolMode toolMode)
+    {
+        prefabPanel.SetActive(false);
+        switch (toolMode)
+        {
+            case ToolMode.Paneo:
+                break;
+            case ToolMode.Build:
+                prefabPanel.SetActive(true);
+                break;
+            case ToolMode.Select:
+                break;
+            case ToolMode.Rotate:
+                break;
+            case ToolMode.Move:
+                break;
+            default:
+                break;
+        }
     }
 
     void UpdateInfoText()
