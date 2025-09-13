@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5233254553806269121}
   - component: {fileID: 5750120379754455353}
   - component: {fileID: 5809389796022937229}
+  - component: {fileID: 3010429703512320614}
   m_Layer: 0
   m_Name: Esphera
   m_TagString: Untagged
@@ -217,3 +218,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3010429703512320614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000664740493414718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be79de649b450ab449a89a5b28335308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validColor: {r: 0.4, g: 1, b: 0.6, a: 1}
+  invalidColor: {r: 1, g: 0.4, b: 0.4, a: 1}
+  tintWhileDragging: 1
+  dragging: 0
